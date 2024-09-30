@@ -15,6 +15,18 @@
   % \the\hoffset  \par
 
   \begin{multicols}{\NumberOfColumn}
+    \enlargethispage*{\baselineskip}
+    \begin{center}
+      \Huge\textsc{ACM ICPC Team Reference - \TeamName}
+      \vspace{0.35cm}
+    \end{center}
+    \tableofcontents
+  \end{multicols}
+  \clearpage
+
+  \newpage
+
+  \begin{multicols}{\NumberOfColumn}
     \pagestyle{fancy}
 
     \fancyfoot{}
@@ -28,25 +40,7 @@
     \input{list.tex}
     \clearpage
   \end{multicols}
-  \newpage
-  \begin{multicols}{\NumberOfColumn}
-    \enlargethispage*{\baselineskip}
-    \begin{center}
-      \Huge\textsc{ACM ICPC Team Reference - \TeamName}
-      \vspace{0.35cm}
-    \end{center}
-    \tableofcontents
-  \end{multicols}
-  \clearpage
-
-  % 以下是測機用範本，不需要可以刪掉
-  \begin{multicols}{\NumberOfColumn}
-    \begin{center}
-      \Huge\textsc{ACM ICPC Judge Test - \TeamName}
-      \vspace{0.35cm}
-    \end{center}
-    \scriptsize
-    \input{./judge-test/cpp-test.tex}
-  \end{multicols}
+  
+  
 
 \end{document}

@@ -1,6 +1,6 @@
 import sys
-from os import walk, system
-from os.path import join, split, splitext
+from os import walk, system, remove
+from os.path import join, split, splitext, exists
 
 sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
@@ -55,6 +55,13 @@ def texCodeGen(out, FileDict):
 
 if __name__ == '__main__':
     print("[#] Start Processing Code Book List...")
+
+    # Check if Codebook.pdf exists and delete it if it does
+    pdf_path = 'Codebook.pdf'
+    if exists(pdf_path):
+        print(f"[*] {pdf_path} exists. Removing it...")
+        remove(pdf_path)
+
     print("[1] Get Codes...")
 
     FileDict = PrepareFileDict("./codes")
